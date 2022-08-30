@@ -12,14 +12,14 @@ INCLUDE_DIRECTORIES(./src)
 
 # ViBe动态链接库生成
 SET(LIB_VIBE_SOURCE
-	./src/ViBe/Vibe.h
-	./src/ViBe/Vibe.cpp)
+	./src/Vibe.h
+	./src/Vibe.cpp)
 ADD_LIBRARY(vibe SHARED ${LIB_VIBE_SOURCE})
 TARGET_LINK_LIBRARIES(vibe
 	${OpenCV_LIBS})
 
 # 生成ViBe测试程序
 SET(LIB_VIBE vibe)
-ADD_EXECUTABLE(vibe_test ./src/ViBe/main.cpp)
+ADD_EXECUTABLE(vibe_test ./src/main.cpp)
 TARGET_LINK_LIBRARIES(vibe_test
 	${LIB_VIBE})
